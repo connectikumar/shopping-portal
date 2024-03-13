@@ -1,28 +1,28 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('build-the-app') {
       steps {
         echo 'this is the build job'
         sh 'npm install'
       }
     }
 
-    stage('test') {
+    stage('test-the-app') {
       steps {
         echo 'this is the test job'
         sh 'npm test'
       }
     }
 
-    stage('package') {
+    stage('package-the-app') {
       steps {
         echo 'this is the package job'
         sh 'npm run package'
       }
     }
 
-    stage('artifact') {
+    stage('archive-the-artifact') {
       steps {
         archiveArtifacts '**/distribution/*.zip'
       }
